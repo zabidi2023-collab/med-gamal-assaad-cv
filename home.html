@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمال أسعد | Gamal Asaad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .header {
+            background: #1a365d;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 5px solid #c9a959;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #e6d5a8;
+            font-size: 1.1em;
+        }
+        
+        .language-section {
+            padding: 40px 20px;
+        }
+        
+        .language-title {
+            color: #1a365d;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .language-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .lang-btn.ar {
+            background: #1a365d;
+            color: white;
+            border-color: #1a365d;
+        }
+        
+        .lang-btn.ar:hover {
+            background: #2c5282;
+            border-color: #c9a959;
+        }
+        
+        .lang-btn.en {
+            background: white;
+            color: #1a365d;
+            border-color: #1a365d;
+        }
+        
+        .lang-btn.en:hover {
+            background: #f7fafc;
+            border-color: #c9a959;
+        }
+        
+        .lang-btn.fr {
+            background: white;
+            color: #1a365d;
+            border-color: #1a365d;
+        }
+        
+        .lang-btn.fr:hover {
+            background: #f7fafc;
+            border-color: #c9a959;
+        }
+        
+        .flag {
+            font-size: 1.5em;
+        }
+        
+        .footer {
+            background: #f7fafc;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #1a365d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gamal Asaad</h1>
+            <p>Senior Supply Chain & Logistics Manager</p>
+        </div>
+        
+        <div class="language-section">
+            <h2 class="language-title">اختر اللغة | Choose Language | Choisir la langue</h2>
+            
+            <div class="language-buttons">
+                <a href="index.html" class="lang-btn ar">
+                    <span class="flag">🇾🇪</span>
+                    العربية
+                </a>
+                
+                <a href="index-en.html" class="lang-btn en">
+                    <span class="flag">🇬🇧</span>
+                    English
+                </a>
+                
+                <a href="index-fr.html" class="lang-btn fr">
+                    <span class="flag">🇫🇷</span>
+                    Français
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📧 <a href="mailto:zabidi2023@gmail.com">zabidi2023@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
