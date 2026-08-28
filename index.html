@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جمال أسعد | مدير أول لسلسلة الإمداد واللوجستيات</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c9a959;
+            --accent-light: #e6d5a8;
+            --text: #2d3748;
+            --text-light: #718096;
+            --bg: #ffffff;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+        }
         
         * {
             margin: 0;
@@ -13,842 +25,598 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a2e;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b8;
-            --accent-1: #6c63ff;
-            --accent-2: #00d2ff;
-            --accent-3: #ff6b6b;
-            --accent-4: #ffd93d;
-            --gradient-1: linear-gradient(135deg, #6c63ff 0%, #00d2ff 100%);
-            --gradient-2: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
-            --gradient-3: linear-gradient(135deg, #00d2ff 0%, #6c63ff 100%);
-        }
-        
         body {
-            font-family: 'Cairo', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #f0f4f8;
+            color: var(--text);
             line-height: 1.8;
-            overflow-x: hidden;
-        }
-        
-        /* تأثير النجوم المتحركة */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
         }
         
         .container {
-            position: relative;
-            z-index: 1;
             max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: var(--gradient-1);
-            border-radius: 30px;
-            padding: 60px 30px;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
+            margin: 30px auto;
+            background: var(--bg);
+            box-shadow: var(--shadow-lg);
+            border-radius: 5px;
             overflow: hidden;
-            animation: slideInUp 1s ease-out;
-            box-shadow: 0 20px 60px rgba(108, 99, 255, 0.3);
         }
         
-        .hero::before {
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid var(--accent);
+        }
+        
+        .header::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
         }
         
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .hero h1 {
-            font-size: 3em;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            position: relative;
-        }
-        
-        .hero .title {
-            font-size: 1.4em;
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
             margin-bottom: 10px;
-            opacity: 0.95;
-            position: relative;
+            text-transform: uppercase;
         }
         
-        .hero .tagline {
-            font-size: 1em;
-            font-style: italic;
-            margin-bottom: 25px;
-            opacity: 0.85;
-            position: relative;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .contact-item {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.85em;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        
-        .availability {
-            display: inline-block;
-            background: rgba(0, 210, 255, 0.2);
-            border: 1px solid rgba(0, 210, 255, 0.4);
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            animation: pulse 2s infinite;
-            position: relative;
+        .header .title {
+            font-size: 1.3em;
+            color: var(--accent-light);
+            font-weight: 400;
+            letter-spacing: 1px;
             margin-bottom: 20px;
         }
         
-        .download-btn {
-            display: inline-block;
-            background: white;
-            color: #6c63ff;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
+        .header .divider {
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+            margin: 20px auto;
+        }
+        
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #cbd5e0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item .icon {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: var(--primary);
             font-weight: 700;
-            font-size: 1.1em;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            animation: float 3s infinite;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            text-transform: uppercase;
         }
         
-        .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        .section-title .icon {
+            color: var(--accent);
+            margin-left: 10px;
         }
         
-        /* Stats Section */
+        /* ===== SUMMARY ===== */
+        .summary-box {
+            background: var(--bg-light);
+            border-right: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 3px;
+            font-size: 1.05em;
+            color: #4a5568;
+        }
+        
+        /* ===== STATS ===== */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
         
         .stat-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 25px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--primary);
+            padding: 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-            animation: slideInUp 0.8s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
+            border-radius: 3px;
+            transition: all 0.3s;
         }
         
         .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border-color: rgba(108, 99, 255, 0.5);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-top-color: var(--accent);
         }
         
         .stat-number {
-            font-size: 2.5em;
-            font-weight: 900;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary);
         }
         
         .stat-label {
-            font-size: 0.9em;
-            color: var(--text-secondary);
+            font-size: 0.85em;
+            color: var(--text-light);
             margin-top: 5px;
         }
         
-        /* Sections */
-        .section {
-            background: var(--bg-card);
-            border-radius: 25px;
-            padding: 35px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.1);
-            animation: slideInUp 0.8s ease-out;
-            transition: all 0.3s ease;
-        }
-        
-        .section:hover {
-            border-color: rgba(108, 99, 255, 0.3);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-        
-        .section-title {
-            font-size: 1.8em;
-            font-weight: 700;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .section-title .icon {
-            -webkit-text-fill-color: initial;
-            background: var(--gradient-1);
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7em;
-        }
-        
-        /* Summary */
-        .summary-box {
-            background: rgba(108, 99, 255, 0.1);
-            border-right: 4px solid #6c63ff;
-            padding: 25px;
-            border-radius: 15px;
-            line-height: 1.9;
-            color: #d0d0e0;
-        }
-        
-        /* Achievements */
+        /* ===== ACHIEVEMENTS ===== */
         .achievement-card {
-            background: rgba(0, 210, 255, 0.05);
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
+            display: flex;
+            gap: 15px;
             margin-bottom: 15px;
-            transition: all 0.3s ease;
-            animation: slideInLeft 0.6s ease-out;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
         }
         
         .achievement-card:hover {
-            background: rgba(0, 210, 255, 0.1);
-            border-color: rgba(0, 210, 255, 0.5);
-            transform: translateX(-10px);
+            border-right-color: var(--accent);
+            box-shadow: var(--shadow);
         }
         
-        .achievement-card h3 {
-            color: #00d2ff;
-            margin-bottom: 8px;
+        .achievement-icon {
+            font-size: 1.5em;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .achievement-content h3 {
+            color: var(--primary);
             font-size: 1.1em;
-        }
-        
-        .achievement-card p {
-            color: #b0b0c8;
-            font-size: 0.95em;
-        }
-        
-        /* Experience */
-        .experience-box {
-            background: rgba(255, 107, 107, 0.05);
-            border: 1px solid rgba(255, 107, 107, 0.2);
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            animation: slideInRight 0.8s ease-out;
-        }
-        
-        .experience-box h3 {
-            color: #ff6b6b;
-            font-size: 1.4em;
             margin-bottom: 5px;
         }
         
-        .experience-box .company {
-            color: #ffd93d;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+        .achievement-content p {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        
+        /* ===== EXPERIENCE ===== */
+        .experience-card {
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .experience-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 25px;
+        }
+        
+        .experience-header h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        
+        .experience-header .company {
+            color: var(--accent-light);
+            font-size: 1em;
+        }
+        
+        .experience-header .meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #cbd5e0;
+        }
+        
+        .experience-body {
+            padding: 25px;
         }
         
         .responsibility {
-            margin-bottom: 12px;
-            color: #d0d0e0;
+            margin-bottom: 15px;
             padding-right: 20px;
-            position: relative;
+            border-right: 2px solid var(--accent-light);
         }
         
-        .responsibility::before {
-            content: '▸';
-            position: absolute;
-            right: 0;
-            color: #ff6b6b;
+        .responsibility strong {
+            color: var(--primary);
         }
         
-        /* Resilience Section */
-        .resilience-box {
-            background: rgba(255, 217, 61, 0.05);
-            border: 1px solid rgba(255, 217, 61, 0.2);
+        /* ===== RESILIENCE ===== */
+        .resilience-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
             padding: 25px;
-            border-radius: 15px;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease-out;
+            border-radius: 3px;
+            border-right: 4px solid var(--accent);
         }
         
-        .resilience-box h3 {
-            color: #ffd93d;
-            margin-bottom: 12px;
+        .resilience-section h3 {
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            font-size: 1.1em;
         }
         
-        .resilience-box p {
-            color: #d0d0e0;
+        .resilience-section p {
+            color: #cbd5e0;
+            font-size: 0.95em;
         }
         
-        /* Skills */
-        .skills-container {
+        /* ===== SKILLS ===== */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
         
         .skill-category {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
             padding: 20px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
         }
         
         .skill-category h3 {
-            color: #00d2ff;
+            color: var(--primary);
+            font-size: 1em;
             margin-bottom: 15px;
-            font-size: 1.1em;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-light);
         }
         
         .skill-tag {
             display: inline-block;
-            background: rgba(108, 99, 255, 0.2);
-            color: #a0a0ff;
-            padding: 6px 14px;
-            border-radius: 20px;
-            margin: 4px;
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin: 3px;
             font-size: 0.85em;
-            border: 1px solid rgba(108, 99, 255, 0.3);
-            transition: all 0.3s ease;
+            border: 1px solid var(--border);
         }
         
-        .skill-tag:hover {
-            background: rgba(108, 99, 255, 0.3);
-            transform: scale(1.05);
+        /* ===== EDUCATION ===== */
+        .edu-card {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            border-right: 3px solid var(--primary);
         }
         
-        /* Values */
-        .values-container {
+        .edu-icon {
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+        
+        .edu-content h3 {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+        
+        .edu-content .institution {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .edu-content .meta {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        
+        /* ===== CERTIFICATIONS ===== */
+        .cert-card {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .cert-card:hover {
+            box-shadow: var(--shadow);
+            border-right-color: var(--accent);
+        }
+        
+        .cert-badge {
+            font-size: 2em;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .cert-content h3 {
+            color: var(--primary);
+            font-size: 1.05em;
+        }
+        
+        .cert-content .issuer {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .cert-content .year {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        
+        /* ===== VALUES ===== */
+        .values-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
         }
         
         .value-tag {
-            background: var(--gradient-2);
-            color: #1a1a2e;
-            padding: 10px 22px;
-            border-radius: 25px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            animation: float 3s infinite;
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            border-bottom: 3px solid var(--accent);
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s;
         }
         
         .value-tag:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            background: var(--primary);
+            color: white;
+            border-bottom-color: var(--accent);
         }
         
-        /* Footer */
+        /* ===== FOOTER ===== */
         .footer {
+            background: var(--primary);
+            color: #cbd5e0;
             text-align: center;
             padding: 30px;
-            background: var(--bg-card);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            animation: fadeIn 1s ease-out;
+            border-top: 5px solid var(--accent);
         }
         
-        .footer p {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
         }
         
-        /* Scroll Animation */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero h1 {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
                 font-size: 2em;
             }
             
-            .hero .title {
-                font-size: 1.1em;
+            .section {
+                padding: 25px 20px;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             
-            .section {
-                padding: 20px;
-            }
-            
-            .section-title {
-                font-size: 1.4em;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .hero {
-                padding: 40px 20px;
-            }
-            
-            .stats-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .experience-header .meta {
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- نجوم متحركة -->
-    <div class="stars" id="stars"></div>
-    
     <div class="container">
-        <!-- Hero Section -->
-        <div class="hero">
+        <!-- ===== HEADER ===== -->
+        <div class="header">
             <h1>جمال أسعد</h1>
             <p class="title">مدير أول لسلسلة الإمداد واللوجستيات</p>
-            <p class="tagline">✨ بناء سلاسل إمداد إنسانية مرنة ✨</p>
+            <div class="divider"></div>
             
-            <div class="contact-info">
-                <span class="contact-item">📧 zabidi2023@gmail.com</span>
-                <span class="contact-item">📞 +967 781 118 747</span>
-                <span class="contact-item">📍 اليمن / جيبوتي</span>
-                <span class="contact-item">💼 LinkedIn</span>
-            </div>
-            
-            <div class="availability">
-                ✅ متاح للانتقال: دول الخليج، المملكة المتحدة، أوروبا، كندا، أستراليا، نيوزيلندا
-            </div>
-            <br>
-            <a href="#" class="download-btn" onclick="window.print()">📥 تحميل السيرة الذاتية PDF</a>
-        </div>
-        
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">30%</div>
-                <div class="stat-label">⚡ خفض وقت التسليم</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">99.5%</div>
-                <div class="stat-label">🎯 دقة المخزون</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">21+</div>
-                <div class="stat-label">🏥 مرفقاً مدعوماً</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">$2M+</div>
-                <div class="stat-label">💰 قيمة المخزون</div>
+            <div class="contact-bar">
+                <span class="contact-item">
+                    <span class="icon">✉</span> zabidi2023@gmail.com
+                </span>
+                <span class="contact-item">
+                    <span class="icon">✆</span> +967 781 118 747
+                </span>
+                <span class="contact-item">
+                    <span class="icon">⌂</span> اليمن / جيبوتي
+                </span>
+                <span class="contact-item">
+                    <span class="icon">in</span> LinkedIn
+                </span>
             </div>
         </div>
         
-        <!-- Professional Summary -->
-        <div class="section scroll-animate">
+        <!-- ===== STATS ===== -->
+        <div class="section">
+            <h2 class="section-title">📊 المؤشرات الرئيسية</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">خفض وقت التسليم</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.5%</div>
+                    <div class="stat-label">دقة المخزون</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">21+</div>
+                    <div class="stat-label">مرفقاً مدعوماً</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2M+</div>
+                    <div class="stat-label">قيمة المخزون</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== SUMMARY ===== -->
+        <div class="section">
             <h2 class="section-title">📋 الملخص المهني</h2>
             <div class="summary-box">
-                <p>مدير أول لسلسلة الإمداد واللوجستيات مع خبرة تزيد عن <strong>10 سنوات</strong> في إدارة سلاسل الإمداد الشاملة في البيئات الإنسانية المعقدة. قمت بإدارة المشتريات والتخزين والتوزيع للأدوية (بما فيها سلسلة التبريد: الأنسولين البشري) واللقاحات والمعدات الطبية ومستلزمات غسيل الكلى والمستلزمات الزراعية ومعدات الوقاية الشخصية ومواد الإغاثة الطارئة في أكثر من <strong>21 مرفقاً صحياً</strong> في <strong>5 محافظات يمنية</strong>.</p>
+                <p>مدير أول لسلسلة الإمداد واللوجستيات مع خبرة تزيد عن 10 سنوات في إدارة سلاسل الإمداد الشاملة في البيئات الإنسانية المعقدة. قمت بإدارة المشتريات والتخزين والتوزيع للأدوية (بما فيها سلسلة التبريد: الأنسولين البشري) واللقاحات والمعدات الطبية ومستلزمات غسيل الكلى والمستلزمات الزراعية ومعدات الوقاية الشخصية ومواد الإغاثة الطارئة في أكثر من 21 مرفقاً صحياً في 5 محافظات يمنية.</p>
                 <br>
-                <p>تنقلت بين اليمن وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين وضمان الاستمرارية. قدمت إشرافاً عن بعد لـ <strong>5 مكاتب فرعية</strong> وعملت كحلقة وصل رئيسية مع وزارة الصحة والمجلس الأعلى للأدوية والجمارك ومزودي الخدمات اللوجستية.</p>
+                <p>تنقلت بين اليمن وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين وضمان الاستمرارية. قدمت إشرافاً عن بعد لـ 5 مكاتب فرعية وعملت كحلقة وصل رئيسية مع وزارة الصحة والمجلس الأعلى للأدوية والجمارك ومزودي الخدمات اللوجستية.</p>
             </div>
         </div>
         
-        <!-- Key Achievements -->
-        <div class="section scroll-animate">
+        <!-- ===== ACHIEVEMENTS ===== -->
+        <div class="section">
             <h2 class="section-title">🏆 الإنجازات الرئيسية</h2>
             
             <div class="achievement-card">
-                <h3>⚡ تحسين سلسلة الإمداد</h3>
-                <p>خفض وقت التسليم من المشتريات إلى التوصيل بنسبة 30% من خلال مراقبة خطوط الإمداد وتنسيق الموردين.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>تحسين سلسلة الإمداد</h3>
+                    <p>خفض وقت التسليم من المشتريات إلى التوصيل بنسبة 30% من خلال مراقبة خطوط الإمداد وتنسيق الموردين.</p>
+                </div>
             </div>
             
             <div class="achievement-card">
-                <h3>💻 تطبيق نظام ERP</h3>
-                <p>تطبيق JD Edwards Oracle لتخطيط الطلب والتنبؤ والتجديد التلقائي، مما قلل تناقضات المخزون بنسبة 25%.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>تطبيق نظام ERP</h3>
+                    <p>تطبيق JD Edwards Oracle لتخطيط الطلب والتنبؤ والتجديد التلقائي، مما قلل تناقضات المخزون بنسبة 25%.</p>
+                </div>
             </div>
             
             <div class="achievement-card">
-                <h3>🎯 دقة المخزون</h3>
-                <p>تحقيق دقة مخزون بنسبة 99.5% لمخزونات تتجاوز قيمتها 2 مليون دولار.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>دقة المخزون</h3>
+                    <p>تحقيق دقة مخزون بنسبة 99.5% لمخزونات تتجاوز قيمتها 2 مليون دولار.</p>
+                </div>
             </div>
             
             <div class="achievement-card">
-                <h3>📊 أنظمة إدارة الجودة</h3>
-                <p>إنشاء نظام شامل لإدارة الجودة يشمل إجراءات التشغيل القياسية والتحقق من الموردين وأنظمة CAPA.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>أنظمة إدارة الجودة</h3>
+                    <p>إنشاء نظام شامل لإدارة الجودة يشمل إجراءات التشغيل القياسية والتحقق من الموردين وأنظمة CAPA.</p>
+                </div>
             </div>
             
             <div class="achievement-card">
-                <h3>🤝 إدارة الموردين</h3>
-                <p>تقييم وتأهيل أكثر من 50 مورداً لضمان الجودة والامتثال.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>إدارة الموردين</h3>
+                    <p>تقييم وتأهيل أكثر من 50 مورداً لضمان الجودة والامتثال.</p>
+                </div>
             </div>
             
             <div class="achievement-card">
-                <h3>🛡️ إدارة المخاطر</h3>
-                <p>خفض الخسائر الناتجة عن انتهاء الصلاحية بنسبة 15% من خلال المراقبة الاستباقية.</p>
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>إدارة المخاطر</h3>
+                    <p>خفض الخسائر الناتجة عن انتهاء الصلاحية بنسبة 15% من خلال المراقبة الاستباقية.</p>
+                </div>
             </div>
         </div>
         
-        <!-- Professional Experience -->
-        <div class="section scroll-animate">
+        <!-- ===== EXPERIENCE ===== -->
+        <div class="section">
             <h2 class="section-title">💼 الخبرة المهنية</h2>
             
-            <div class="experience-box">
-                <h3>مدير سلسلة الإمداد واللوجستيات</h3>
-                <p class="company">اللجنة الدولية للصليب الأحمر (ICRC) | اليمن / جيبوتي</p>
-                <p style="color: #ffd93d; margin-bottom: 15px;">📅 مايو 2013 – نوفمبر 2023</p>
-                
-                <div class="responsibility"><strong>إدارة سلسلة الإمداد الشاملة:</strong> إدارة عمليات المشتريات والتخزين والتوزيع واللوجستيات الميدانية الداعمة لأكثر من 21 مرفقاً في 5 محافظات يمنية.</div>
-                
-                <div class="responsibility"><strong>التنقل عبر الحدود:</strong> التنقل المتكرر بين صنعاء وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين.</div>
-                
-                <div class="responsibility"><strong>التنسيق الميداني عن بعد:</strong> الإشراف عن بعد على المكاتب الفرعية في 5 محافظات كنقطة اتصال رئيسية للفرق الميدانية.</div>
-                
-                <div class="responsibility"><strong>تطبيق نظام ERP:</strong> قيادة تطبيق JD Edwards Oracle لتخطيط الطلب والتجديد التلقائي.</div>
-                
-                <div class="responsibility"><strong>أنظمة إدارة الجودة:</strong> إنشاء نظام قوي لإدارة الجودة يشمل إجراءات التشغيل القياسية وأنظمة CAPA.</div>
-                
-                <div class="responsibility"><strong>المشتريات والعقود:</strong> قيادة عمليات المشتريات بما فيها طلبات العروض والتقييم والتفاوض.</div>
-                
-                <div class="responsibility"><strong>التواصل الحكومي:</strong> العمل كحلقة وصل رئيسية مع وزارة الصحة والجمارك.</div>
-                
-                <div class="responsibility"><strong>الاستجابة للطوارئ:</strong> إدارة اللوجستيات لتفشي الكوليرا والاستجابة لكوفيد-19.</div>
-            </div>
-        </div>
-        
-        <!-- Supply Chain Resilience -->
-        <div class="section scroll-animate">
-            <h2 class="section-title">🌍 مرونة سلسلة الإمداد الإنسانية</h2>
-            <p style="color: #a0a0b8; margin-bottom: 20px;">توفير وإدارة وتوصيل الأصول المنقذة للحياة في مناطق النزاع النشط</p>
-            
-            <div class="resilience-box">
-                <h3>١️⃣ سياق الانهيار النظامي: العمل في اليمن أثناء الحرب</h3>
-                <p>في بيئات النزاع النشط مثل اليمن، تنهار نظريات سلسلة الإمداد القياسية تماماً. عقد من الأزمة التشغيلية خلق بيئة تتميز بالفشل التام لمقدمي الرعاية الصحية العامة، وقيود شديدة على الاستيراد، وأسواق محلية مقيدة بشدة.</p>
-            </div>
-            
-            <div class="resilience-box">
-                <h3>٢️⃣ الهيكل الاستراتيجي: الإطار اللوجستي ثلاثي المستويات</h3>
-                <p>لتجاوز هذه القيود النظامية، تم تصميم هيكل لوجستي قوي ومتجاوب من ثلاثة مستويات:</p>
-                <br>
-                <p><strong style="color: #ffd93d;">أ. القرب الاستراتيجي:</strong> شبكة استراتيجية من المستودعات الإقليمية المحلية حمى خطوط الإمداد من الانقطاعات الجغرافية المفاجئة.</p>
-                <br>
-                <p><strong style="color: #ffd93d;">ب. الدقة التنبؤية:</strong> دمج مبادئ تخطيط متطلبات المواد (MRP) في أنظمة ERP المتقدمة، مما جلب الانضباط لتخطيط الطلب.</p>
-                <br>
-                <p><strong style="color: #ffd93d;">ج. المرونة الطارئة:</strong> آلية توريد مرنة مصممة لاستيعاب الطلبات المتزايدة وتجاوز البيروقراطية.</p>
-            </div>
-            
-            <div class="resilience-box">
-                <h3>٣️⃣ الأثر المؤسسي والقيمة المضافة</h3>
-                <p>هذا النموذج التشغيلي يثبت أنه حتى عند انهيار البنية التحتية الوطنية، فإن سلسلة الإمداد المبنية على تآزر البيانات التنبؤية والتنفيذ المرن يمكنها ضمان البقاء.</p>
-            </div>
-        </div>
-        
-        <!-- Core Competencies -->
-        <div class="section scroll-animate">
-            <h2 class="section-title">🛠️ الكفاءات الأساسية</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>📦 إدارة سلسلة الإمداد</h3>
-                    <span class="skill-tag">إدارة شاملة</span>
-                    <span class="skill-tag">استراتيجية وتخطيط</span>
-                    <span class="skill-tag">تخطيط الطلب</span>
-                    <span class="skill-tag">التنبؤ</span>
-                    <span class="skill-tag">مراقبة الأداء</span>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>مدير سلسلة الإمداد واللوجستيات</h3>
+                    <p class="company">اللجنة الدولية للصليب الأحمر (ICRC)</p>
+                    <div class="meta">
+                        <span>📍 اليمن / جيبوتي</span>
+                        <span>📅 مايو 2013 – نوفمبر 2023</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>📑 المشتريات والتعاقدات</h3>
-                    <span class="skill-tag">مشتريات استراتيجية</span>
-                    <span class="skill-tag">طلبات العروض</span>
-                    <span class="skill-tag">تقييم العطاءات</span>
-                    <span class="skill-tag">التفاوض</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>✅ إدارة الجودة</h3>
-                    <span class="skill-tag">أنظمة QMS</span>
-                    <span class="skill-tag">إجراءات SOP</span>
-                    <span class="skill-tag">التحقق من الموردين</span>
-                    <span class="skill-tag">CAPA</span>
-                    <span class="skill-tag">GMP/GDP</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>🏭 المستودعات والمخزون</h3>
-                    <span class="skill-tag">عمليات المستودعات</span>
-                    <span class="skill-tag">إدارة المخزون</span>
-                    <span class="skill-tag">الجرد الدوري</span>
-                    <span class="skill-tag">أنظمة WMS</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>🚚 اللوجستيات والتوزيع</h3>
-                    <span class="skill-tag">تخطيط التوزيع</span>
-                    <span class="skill-tag">إدارة الأسطول</span>
-                    <span class="skill-tag">سلسلة التبريد</span>
-                    <span class="skill-tag">التوصيل النهائي</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>💻 أنظمة ERP والتكنولوجيا</h3>
-                    <span class="skill-tag">JD Edwards Oracle</span>
-                    <span class="skill-tag">SAP S/4HANA</span>
-                    <span class="skill-tag">SAP Ariba</span>
-                    <span class="skill-tag">تحليل البيانات</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>👥 القيادة والموارد البشرية</h3>
-                    <span class="skill-tag">قيادة الفريق</span>
-                    <span class="skill-tag">التوظيف</span>
-                    <span class="skill-tag">تقييم الأداء</span>
-                    <span class="skill-tag">التدريب والتوجيه</span>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>🌐 اللغات</h3>
-                    <span class="skill-tag">العربية (اللغة الأم)</span>
-                    <span class="skill-tag">الإنجليزية (طلاقة)</span>
-                    <span class="skill-tag">الفرنسية (أساسية)</span>
+                <div class="experience-body">
+                    <div class="responsibility">
+                        <strong>إدارة سلسلة الإمداد الشاملة:</strong> إدارة عمليات المشتريات والتخزين والتوزيع واللوجستيات الميدانية الداعمة لأكثر من 21 مرفقاً في 5 محافظات يمنية.
+                    </div>
+                    <div class="responsibility">
+                        <strong>التنقل عبر الحدود:</strong> التنقل المتكرر بين صنعاء وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين.
+                    </div>
+                    <div class="responsibility">
+                        <strong>التنسيق الميداني عن بعد:</strong> الإشراف عن بعد على المكاتب الفرعية في 5 محافظات كنقطة اتصال رئيسية للفرق الميدانية.
+                    </div>
+                    <div class="responsibility">
+                        <strong>تطبيق نظام ERP:</strong> قيادة تطبيق JD Edwards Oracle لتخطيط الطلب والتجديد التلقائي.
+                    </div>
+                    <div class="responsibility">
+                        <strong>أنظمة إدارة الجودة:</strong> إنشاء نظام قوي لإدارة الجودة يشمل إجراءات التشغيل القياسية وأنظمة CAPA.
+                    </div>
+                    <div class="responsibility">
+                        <strong>المشتريات والعقود:</strong> قيادة عمليات المشتريات بما فيها طلبات العروض والتقييم والتفاوض.
+                    </div>
+                    <div class="responsibility">
+                        <strong>التواصل الحكومي:</strong> العمل كحلقة وصل رئيسية مع وزارة الصحة والجمارك.
+                    </div>
+                    <div class="responsibility">
+                        <strong>الاستجابة للطوارئ:</strong> إدارة اللوجستيات لتفشي الكوليرا والاستجابة لكوفيد-19.
+                    </div>
                 </div>
             </div>
         </div>
         
-        <!-- Education & Certifications -->
-        <div class="section scroll-animate">
-            <h2 class="section-title">🎓 التعليم والشهادات</h2>
+        <!-- ===== RESILIENCE ===== -->
+        <div class="section">
+            <h2 class="section-title">🌍 مرونة سلسلة الإمداد</h2>
             
-            <div style="margin-bottom: 25px;">
-                <h3 style="color: #00d2ff; margin-bottom: 15px;">📚 التعليم</h3>
-                <div class="achievement-card">
-                    <h3>بكالوريوس صيدلة (B.Pharm)</h3>
-                    <p>جامعة صنعاء – كلية الصيدلة، اليمن | 2005 – 2010</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>دبلوم ITC في إدارة سلسلة الإمداد</h3>
-                    <p>مركز التجارة الدولي (ITC)، سويسرا | مرشح مسجل</p>
-                </div>
+            <div class="resilience-section">
+                <h3>١. سياق الانهيار النظامي</h3>
+                <p>في بيئات النزاع النشط مثل اليمن، تنهار نظريات سلسلة الإمداد القياسية تماماً. عقد من الأزمة التشغيلية خلق بيئة تتميز بالفشل التام لمقدمي الرعاية الصحية العامة، وقيود شديدة على الاستيراد.</p>
             </div>
             
-            <div>
-                <h3 style="color: #00d2ff; margin-bottom: 15px;">📜 الشهادات</h3>
-                <div class="achievement-card">
-                    <h3>شهادات SAP (4)</h3>
-                    <p>S/4HANA Cloud، Ariba Supplier Management | 2024</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>شهادات اللجنة الدولية للصليب الأحمر</h3>
-                    <p>جنيف | 2013-2019</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>أكاديمية القيادة الإنسانية</h3>
-                    <p>منصة Kaya | 2026</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Core Values -->
-        <div class="section scroll-animate">
-            <h2 class="section-title">💎 القيم الأساسية والصفات</h2>
-            <div class="values-container">
-                <span class="value-tag">النزاهة</span>
-                <span class="value-tag">الاحترافية</span>
-                <span class="value-tag">المساواة بين الجنسين</span>
-                <span class="value-tag">التنوع</span>
-                <span class="value-tag">المبادئ الإنسانية</span>
-            </div>
-            <br>
-            <div class="values-container">
-                <span class="value-tag">منظم للغاية</span>
-                <span class="value-tag">يهتم بالتفاصيل</span>
-                <span class="value-tag">تواصل ممتاز</span>
-                <span class="value-tag">يعمل تحت الضغط</span>
-                <span class="value-tag">قيادة قوية</span>
-                <span class="value-tag">تعاوني</span>
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p style="font-size: 1.1em; font-weight: 700; color: #6c63ff;">جمال أسعد</p>
-            <p>مدير أول لسلسلة الإمداد واللوجستيات</p>
-            <p style="margin-top: 15px; font-size: 0.9em;">© 2025 جميع الحقوق محفوظة</p>
-        </div>
-    </div>
-    
-    <script>
-        // إنشاء النجوم المتحركة
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.width = Math.random() * 3 + 'px';
-                star.style.height = star.style.width;
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 2 + 's';
-                starsContainer.appendChild(star);
-            }
-        }
-        
-        createStars();
-        
-        // Scroll Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.scroll-animate').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
+            <div class="resilience-section">
+                <h3>٢. الإطار اللوجستي ثلاثي المستويات</h3>
+                <p><strong style="color: #e6d5a8;">القرب الاستراتيجي:</stro
