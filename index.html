@@ -41,6 +41,37 @@
             overflow: hidden;
         }
         
+        /* ===== LANGUAGE BAR ===== */
+        .language-bar {
+            background: #1a365d;
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .language-bar a {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 5px 15px;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .language-bar a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #e6d5a8;
+        }
+        
+        .language-bar a.active {
+            background: #c9a959;
+            color: #1a365d;
+            font-weight: bold;
+        }
+        
         /* ===== HEADER ===== */
         .header {
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
@@ -94,18 +125,43 @@
             color: #cbd5e0;
         }
         
-        .contact-item {
+        .contact-item a {
+            color: #cbd5e0;
+            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: color 0.3s;
         }
         
-        .contact-item .icon {
-            color: var(--accent);
+        .contact-item a:hover {
+            color: var(--accent-light);
+        }
+        
+        /* ===== DOWNLOAD BUTTON ===== */
+        .download-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+            cursor: pointer;
         }
         
-        /* ===== SECTIONS ===== */
+        .download-btn:hover {
+            background: transparent;
+            color: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201,169,89,0.3);
+        }
+        
         .section {
             padding: 40px;
             border-bottom: 1px solid var(--border);
@@ -127,12 +183,6 @@
             text-transform: uppercase;
         }
         
-        .section-title .icon {
-            color: var(--accent);
-            margin-left: 10px;
-        }
-        
-        /* ===== SUMMARY ===== */
         .summary-box {
             background: var(--bg-light);
             border-right: 4px solid var(--primary);
@@ -142,7 +192,6 @@
             color: #4a5568;
         }
         
-        /* ===== STATS ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -178,7 +227,6 @@
             margin-top: 5px;
         }
         
-        /* ===== ACHIEVEMENTS ===== */
         .achievement-card {
             display: flex;
             gap: 15px;
@@ -212,7 +260,6 @@
             font-size: 0.9em;
         }
         
-        /* ===== EXPERIENCE ===== */
         .experience-card {
             margin-bottom: 25px;
             border: 1px solid var(--border);
@@ -258,7 +305,6 @@
             color: var(--primary);
         }
         
-        /* ===== RESILIENCE ===== */
         .resilience-section {
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
             color: white;
@@ -279,7 +325,6 @@
             font-size: 0.95em;
         }
         
-        /* ===== SKILLS ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -312,7 +357,6 @@
             border: 1px solid var(--border);
         }
         
-        /* ===== EDUCATION ===== */
         .edu-card {
             display: flex;
             gap: 15px;
@@ -343,7 +387,6 @@
             font-size: 0.85em;
         }
         
-        /* ===== CERTIFICATIONS ===== */
         .cert-card {
             display: flex;
             gap: 15px;
@@ -382,7 +425,6 @@
             font-size: 0.85em;
         }
         
-        /* ===== VALUES ===== */
         .values-grid {
             display: flex;
             flex-wrap: wrap;
@@ -408,7 +450,6 @@
             border-bottom-color: var(--accent);
         }
         
-        /* ===== FOOTER ===== */
         .footer {
             background: var(--primary);
             color: #cbd5e0;
@@ -422,7 +463,6 @@
             text-decoration: none;
         }
         
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -458,6 +498,13 @@
 </head>
 <body>
     <div class="container">
+        <!-- ===== LANGUAGE BAR ===== -->
+        <div class="language-bar">
+            <a href="index.html" class="active">🇾🇪 العربية</a>
+            <a href="index-en.html">🇬🇧 English</a>
+            <a href="index-fr.html">🇫🇷 Français</a>
+        </div>
+        
         <!-- ===== HEADER ===== -->
         <div class="header">
             <h1>جمال أسعد</h1>
@@ -466,18 +513,22 @@
             
             <div class="contact-bar">
                 <span class="contact-item">
-                    <span class="icon">✉</span> zabidi2023@gmail.com
+                    <a href="mailto:zabidi2023@gmail.com">✉ zabidi2023@gmail.com</a>
                 </span>
                 <span class="contact-item">
-                    <span class="icon">✆</span> +967 781 118 747
+                    <a href="tel:+967781118747">✆ +967 781 118 747</a>
                 </span>
                 <span class="contact-item">
-                    <span class="icon">⌂</span> اليمن / جيبوتي
+                    <span>📍 اليمن / جيبوتي</span>
                 </span>
                 <span class="contact-item">
-                    <span class="icon">in</span> LinkedIn
+                    <a href="https://linkedin.com/in/gamal-assaad-527285163" target="_blank">in LinkedIn</a>
                 </span>
             </div>
+            
+            <a href="Gamal_Asaad_CV.pdf" download class="download-btn">
+                📥 تحميل السيرة الذاتية PDF
+            </a>
         </div>
         
         <!-- ===== STATS ===== -->
@@ -619,4 +670,169 @@
             
             <div class="resilience-section">
                 <h3>٢. الإطار اللوجستي ثلاثي المستويات</h3>
-                <p><strong style="color: #e6d5a8;">القرب الاستراتيجي:</stro
+                <p><strong style="color: #e6d5a8;">القرب الاستراتيجي:</strong> شبكة مستودعات إقليمية حمى خطوط الإمداد من الانقطاعات.</p>
+                <br>
+                <p><strong style="color: #e6d5a8;">الدقة التنبؤية:</strong> دمج مبادئ MRP في أنظمة ERP لجلب الانضباط لتخطيط الطلب.</p>
+                <br>
+                <p><strong style="color: #e6d5a8;">المرونة الطارئة:</strong> آلية توريد مرنة لاستيعاب الطلبات المتزايدة.</p>
+            </div>
+            
+            <div class="resilience-section">
+                <h3>٣. الأثر المؤسسي</h3>
+                <p>سلسلة الإمداد المبنية على تآزر البيانات التنبؤية والتنفيذ المرن يمكنها ضمان البقاء حتى عند انهيار البنية التحتية الوطنية.</p>
+            </div>
+        </div>
+        
+        <!-- ===== SKILLS ===== -->
+        <div class="section">
+            <h2 class="section-title">🛠️ الكفاءات الأساسية</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>إدارة سلسلة الإمداد</h3>
+                    <span class="skill-tag">إدارة شاملة</span>
+                    <span class="skill-tag">استراتيجية وتخطيط</span>
+                    <span class="skill-tag">تخطيط الطلب</span>
+                    <span class="skill-tag">التنبؤ</span>
+                    <span class="skill-tag">مراقبة الأداء</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>المشتريات والتعاقدات</h3>
+                    <span class="skill-tag">مشتريات استراتيجية</span>
+                    <span class="skill-tag">طلبات العروض</span>
+                    <span class="skill-tag">تقييم العطاءات</span>
+                    <span class="skill-tag">التفاوض</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>إدارة الجودة</h3>
+                    <span class="skill-tag">أنظمة QMS</span>
+                    <span class="skill-tag">إجراءات SOP</span>
+                    <span class="skill-tag">التحقق من الموردين</span>
+                    <span class="skill-tag">CAPA</span>
+                    <span class="skill-tag">GMP/GDP</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>المستودعات والمخزون</h3>
+                    <span class="skill-tag">عمليات المستودعات</span>
+                    <span class="skill-tag">إدارة المخزون</span>
+                    <span class="skill-tag">الجرد الدوري</span>
+                    <span class="skill-tag">أنظمة WMS</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>اللوجستيات والتوزيع</h3>
+                    <span class="skill-tag">تخطيط التوزيع</span>
+                    <span class="skill-tag">إدارة الأسطول</span>
+                    <span class="skill-tag">سلسلة التبريد</span>
+                    <span class="skill-tag">التوصيل النهائي</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>أنظمة ERP والتكنولوجيا</h3>
+                    <span class="skill-tag">JD Edwards Oracle</span>
+                    <span class="skill-tag">SAP S/4HANA</span>
+                    <span class="skill-tag">SAP Ariba</span>
+                    <span class="skill-tag">تحليل البيانات</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>القيادة والموارد البشرية</h3>
+                    <span class="skill-tag">قيادة الفريق</span>
+                    <span class="skill-tag">التوظيف</span>
+                    <span class="skill-tag">تقييم الأداء</span>
+                    <span class="skill-tag">التدريب والتوجيه</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>اللغات</h3>
+                    <span class="skill-tag">العربية (اللغة الأم)</span>
+                    <span class="skill-tag">الإنجليزية (طلاقة)</span>
+                    <span class="skill-tag">الفرنسية (أساسية)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== EDUCATION ===== -->
+        <div class="section">
+            <h2 class="section-title">🎓 التعليم والشهادات</h2>
+            
+            <div class="edu-card">
+                <span class="edu-icon">🎓</span>
+                <div class="edu-content">
+                    <h3>بكالوريوس صيدلة (B.Pharm)</h3>
+                    <p class="institution">جامعة صنعاء – كلية الصيدلة</p>
+                    <p class="meta">📍 اليمن | 📅 2005 – 2010</p>
+                </div>
+            </div>
+            
+            <div class="edu-card">
+                <span class="edu-icon">📜</span>
+                <div class="edu-content">
+                    <h3>دبلوم ITC في إدارة سلسلة الإمداد</h3>
+                    <p class="institution">مركز التجارة الدولي (ITC)</p>
+                    <p class="meta">📍 سويسرا | 📅 مرشح مسجل</p>
+                </div>
+            </div>
+            
+            <h3 style="color: #1a365d; margin: 30px 0 20px;">الشهادات المهنية</h3>
+            
+            <div class="cert-card">
+                <span class="cert-badge">🏅</span>
+                <div class="cert-content">
+                    <h3>شهادات SAP (4)</h3>
+                    <p class="issuer">SAP</p>
+                    <p class="year">2024 | S/4HANA Cloud، Ariba Supplier Management</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <span class="cert-badge">🎖️</span>
+                <div class="cert-content">
+                    <h3>شهادات اللجنة الدولية للصليب الأحمر</h3>
+                    <p class="issuer">ICRC – جنيف</p>
+                    <p class="year">2013-2019 | لوجستيات وسلسلة إمداد</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <span class="cert-badge">⭐</span>
+                <div class="cert-content">
+                    <h3>أكاديمية القيادة الإنسانية</h3>
+                    <p class="issuer">منصة Kaya</p>
+                    <p class="year">2026 | تحليل السوق، CVA، الحد من المخاطر</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== VALUES ===== -->
+        <div class="section">
+            <h2 class="section-title">💎 القيم الأساسية</h2>
+            <div class="values-grid">
+                <span class="value-tag">النزاهة</span>
+                <span class="value-tag">الاحترافية</span>
+                <span class="value-tag">المساواة بين الجنسين</span>
+                <span class="value-tag">التنوع</span>
+                <span class="value-tag">المبادئ الإنسانية</span>
+                <span class="value-tag">منظم للغاية</span>
+                <span class="value-tag">يهتم بالتفاصيل</span>
+                <span class="value-tag">تواصل ممتاز</span>
+                <span class="value-tag">يعمل تحت الضغط</span>
+                <span class="value-tag">قيادة قوية</span>
+            </div>
+        </div>
+        
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            <p>© 2025 جمال أسعد. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 10px;">مدير أول لسلسلة الإمداد واللوجستيات</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                <a href="mailto:zabidi2023@gmail.com">zabidi2023@gmail.com</a> | 
+                <a href="tel:+967781118747">+967 781 118 747</a> | 
+                <a href="https://linkedin.com/in/gamal-assaad-527285163" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
