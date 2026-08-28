@@ -1,0 +1,525 @@
+
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمال أسعد | مدير أول لسلسلة الإمداد واللوجستيات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        
+        .summary {
+            background: #f0f9ff;
+            border-right: 4px solid #3b82f6;
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.8;
+            color: #374151;
+        }
+        
+        .achievement {
+            background: #f9fafb;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-right: 4px solid #10b981;
+        }
+        
+        .achievement h3 {
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .achievement p {
+            color: #6b7280;
+            font-size: 0.95em;
+        }
+        
+        .experience {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .experience h3 {
+            color: #92400e;
+            margin-bottom: 5px;
+        }
+        
+        .experience h4 {
+            color: #b45309;
+            margin-bottom: 10px;
+        }
+        
+        .responsibility {
+            margin-bottom: 10px;
+            color: #374151;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .skill-category h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #1e3a8a;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 3px;
+            font-size: 0.85em;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .resilience {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .resilience h3 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+        }
+        
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .value-tag {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(16,185,129,0.4);
+        }
+        
+        .language-switch {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>جمال أسعد</h1>
+            <p>مدير أول لسلسلة الإمداد واللوجستيات</p>
+            <p style="margin-top: 10px; font-style: italic;">بناء سلاسل إمداد إنسانية مرنة</p>
+            
+            <div class="contact-info">
+                <span class="contact-item">📧 zabidi2023@gmail.com</span>
+                <span class="contact-item">📞 +967 781 118 747</span>
+                <span class="contact-item">📍 اليمن / جيبوتي</span>
+                <span class="contact-item">💼 LinkedIn</span>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span style="background: #10b981; padding: 8px 20px; border-radius: 20px; font-size: 0.9em;">
+                    ✅ متاح للانتقال: دول الخليج، المملكة المتحدة، أوروبا، كندا، أستراليا، نيوزيلندا
+                </span>
+            </div>
+            
+            <a href="#" class="download-btn" onclick="window.print()">📥 تحميل السيرة الذاتية PDF</a>
+        </div>
+        
+        <div class="section">
+            <h2>📊 إحصائيات رئيسية</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">خفض وقت التسليم</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99.5%</div>
+                    <div class="stat-label">دقة المخزون</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">21+</div>
+                    <div class="stat-label">مرفقاً مدعوماً</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$2M+</div>
+                    <div class="stat-label">قيمة المخزون</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 الملخص المهني</h2>
+            <div class="summary">
+                <p>مدير أول لسلسلة الإمداد واللوجستيات مع خبرة تزيد عن 10 سنوات في إدارة سلاسل الإمداد الشاملة في البيئات الإنسانية المعقدة. قمت بإدارة المشتريات والتخزين والتوزيع للأدوية (بما فيها سلسلة التبريد: الأنسولين البشري) واللقاحات والمعدات الطبية ومستلزمات غسيل الكلى والمستلزمات الزراعية ومعدات الوقاية الشخصية ومواد الإغاثة الطارئة في أكثر من 21 مرفقاً صحياً في 5 محافظات يمنية.</p>
+                <br>
+                <p>تنقلت بين اليمن وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين وضمان الاستمرارية. قدمت إشرافاً عن بعد لـ 5 مكاتب فرعية وعملت كحلقة وصل رئيسية مع وزارة الصحة والمجلس الأعلى للأدوية والجمارك ومزودي الخدمات اللوجستية.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 الإنجازات الرئيسية</h2>
+            
+            <div class="achievement">
+                <h3>تحسين سلسلة الإمداد</h3>
+                <p>خفض وقت التسليم من المشتريات إلى التوصيل بنسبة 30% من خلال مراقبة خطوط الإمداد وتنسيق الموردين.</p>
+            </div>
+            
+            <div class="achievement">
+                <h3>تطبيق نظام ERP</h3>
+                <p>تطبيق JD Edwards Oracle لتخطيط الطلب والتنبؤ والتجديد التلقائي، مما قلل تناقضات المخزون بنسبة 25%.</p>
+            </div>
+            
+            <div class="achievement">
+                <h3>دقة المخزون</h3>
+                <p>تحقيق دقة مخزون بنسبة 99.5% لمخزونات تتجاوز قيمتها 2 مليون دولار.</p>
+            </div>
+            
+            <div class="achievement">
+                <h3>أنظمة إدارة الجودة</h3>
+                <p>إنشاء نظام شامل لإدارة الجودة يشمل إجراءات التشغيل القياسية والتحقق من الموردين وأنظمة CAPA.</p>
+            </div>
+            
+            <div class="achievement">
+                <h3>إدارة الموردين</h3>
+                <p>تقييم وتأهيل أكثر من 50 مورداً لضمان الجودة والامتثال.</p>
+            </div>
+            
+            <div class="achievement">
+                <h3>إدارة المخاطر</h3>
+                <p>خفض الخسائر الناتجة عن انتهاء الصلاحية بنسبة 15% من خلال المراقبة الاستباقية.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💼 الخبرة المهنية</h2>
+            
+            <div class="experience">
+                <h3>مدير سلسلة الإمداد واللوجستيات</h3>
+                <h4>اللجنة الدولية للصليب الأحمر (ICRC) | اليمن / جيبوتي | مايو 2013 – نوفمبر 2023</h4>
+                
+                <div class="responsibility">
+                    <strong>إدارة سلسلة الإمداد الشاملة:</strong> إدارة عمليات المشتريات والتخزين والتوزيع واللوجستيات الميدانية الداعمة لأكثر من 21 مرفقاً في 5 محافظات يمنية.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>التنقل عبر الحدود:</strong> التنقل المتكرر بين صنعاء وجيبوتي لتحسين العمليات وتوظيف وتدريب الموظفين.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>التنسيق الميداني عن بعد:</strong> الإشراف عن بعد على المكاتب الفرعية في 5 محافظات كنقطة اتصال رئيسية للفرق الميدانية.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>تطبيق نظام ERP:</strong> قيادة تطبيق JD Edwards Oracle لتخطيط الطلب والتجديد التلقائي.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>أنظمة إدارة الجودة:</strong> إنشاء نظام قوي لإدارة الجودة يشمل إجراءات التشغيل القياسية وأنظمة CAPA.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>المشتريات والعقود:</strong> قيادة عمليات المشتريات بما فيها طلبات العروض والتقييم والتفاوض.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>التواصل الحكومي:</strong> العمل كحلقة وصل رئيسية مع وزارة الصحة والجمارك.
+                </div>
+                
+                <div class="responsibility">
+                    <strong>الاستجابة للطوارئ:</strong> إدارة اللوجستيات لتفشي الكوليرا والاستجابة لكوفيد-19.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌍 مرونة سلسلة الإمداد الإنسانية</h2>
+            <p style="margin-bottom: 20px; color: #6b7280;">توفير وإدارة وتوصيل الأصول المنقذة للحياة في مناطق النزاع النشط</p>
+            
+            <div class="resilience">
+                <h3>١. سياق الانهيار النظامي: العمل في اليمن أثناء الحرب</h3>
+                <p>في بيئات النزاع النشط مثل اليمن، تنهار نظريات سلسلة الإمداد القياسية تماماً. عقد من الأزمة التشغيلية خلق بيئة تتميز بالفشل التام لمقدمي الرعاية الصحية العامة، وقيود شديدة على الاستيراد، وأسواق محلية مقيدة بشدة.</p>
+            </div>
+            
+            <div class="resilience">
+                <h3>٢. الهيكل الاستراتيجي: الإطار اللوجستي ثلاثي المستويات</h3>
+                <p>لتجاوز هذه القيود النظامية، تم تصميم هيكل لوجستي قوي ومتجاوب من ثلاثة مستويات:</p>
+                <br>
+                <p><strong style="color: #60a5fa;">أ. القرب الاستراتيجي:</strong> شبكة استراتيجية من المستودعات الإقليمية المحلية حمى خطوط الإمداد من الانقطاعات الجغرافية المفاجئة.</p>
+                <br>
+                <p><strong style="color: #60a5fa;">ب. الدقة التنبؤية:</strong> دمج مبادئ تخطيط متطلبات المواد (MRP) في أنظمة ERP المتقدمة، مما جلب الانضباط لتخطيط الطلب.</p>
+                <br>
+                <p><strong style="color: #60a5fa;">ج. المرونة الطارئة:</strong> آلية توريد مرنة مصممة لاستيعاب الطلبات المتزايدة وتجاوز البيروقراطية.</p>
+            </div>
+            
+            <div class="resilience">
+                <h3>٣. الأثر المؤسسي والقيمة المضافة</h3>
+                <p>هذا النموذج التشغيلي يثبت أنه حتى عند انهيار البنية التحتية الوطنية، فإن سلسلة الإمداد المبنية على تآزر البيانات التنبؤية والتنفيذ المرن يمكنها ضمان البقاء.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🛠️ الكفاءات الأساسية</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>إدارة سلسلة الإمداد</h3>
+                    <span class="skill-tag">إدارة شاملة</span>
+                    <span class="skill-tag">استراتيجية وتخطيط</span>
+                    <span class="skill-tag">تخطيط الطلب</span>
+                    <span class="skill-tag">التنبؤ</span>
+                    <span class="skill-tag">مراقبة الأداء</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>المشتريات والتعاقدات</h3>
+                    <span class="skill-tag">مشتريات استراتيجية</span>
+                    <span class="skill-tag">طلبات العروض</span>
+                    <span class="skill-tag">تقييم العطاءات</span>
+                    <span class="skill-tag">التفاوض</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>إدارة الجودة</h3>
+                    <span class="skill-tag">أنظمة QMS</span>
+                    <span class="skill-tag">إجراءات SOP</span>
+                    <span class="skill-tag">التحقق من الموردين</span>
+                    <span class="skill-tag">CAPA</span>
+                    <span class="skill-tag">GMP/GDP</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>المستودعات والمخزون</h3>
+                    <span class="skill-tag">عمليات المستودعات</span>
+                    <span class="skill-tag">إدارة المخزون</span>
+                    <span class="skill-tag">الجرد الدوري</span>
+                    <span class="skill-tag">أنظمة WMS</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>اللوجستيات والتوزيع</h3>
+                    <span class="skill-tag">تخطيط التوزيع</span>
+                    <span class="skill-tag">إدارة الأسطول</span>
+                    <span class="skill-tag">سلسلة التبريد</span>
+                    <span class="skill-tag">التوصيل النهائي</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>أنظمة ERP والتكنولوجيا</h3>
+                    <span class="skill-tag">JD Edwards Oracle</span>
+                    <span class="skill-tag">SAP S/4HANA</span>
+                    <span class="skill-tag">SAP Ariba</span>
+                    <span class="skill-tag">تحليل البيانات</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>القيادة والموارد البشرية</h3>
+                    <span class="skill-tag">قيادة الفريق</span>
+                    <span class="skill-tag">التوظيف</span>
+                    <span class="skill-tag">تقييم الأداء</span>
+                    <span class="skill-tag">التدريب والتوجيه</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>اللغات</h3>
+                    <span class="skill-tag">العربية (اللغة الأم)</span>
+                    <span class="skill-tag">الإنجليزية (طلاقة)</span>
+                    <span class="skill-tag">الفرنسية (أساسية)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎓 التعليم والشهادات</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #1e3a8a; margin-bottom: 10px;">التعليم</h3>
+                <div class="achievement">
+                    <h3>بكالوريوس صيدلة (B.Pharm)</h3>
+                    <p>جامعة صنعاء – كلية الصيدلة، اليمن | 2005 – 2010</p>
+                </div>
+                <div class="achievement">
+                    <h3>دبلوم ITC في إدارة سلسلة الإمداد</h3>
+                    <p>مركز التجارة الدولي (ITC)، سويسرا | مرشح مسجل</p>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="color: #1e3a8a; margin-bottom: 10px;">الشهادات</h3>
+                <div class="achievement">
+                    <h3>شهادات SAP (4)</h3>
+                    <p>S/4HANA Cloud، Ariba Supplier Management | 2024</p>
+                </div>
+                <div class="achievement">
+                    <h3>شهادات اللجنة الدولية للصليب الأحمر</h3>
+                    <p>جنيف | 2013-2019</p>
+                </div>
+                <div class="achievement">
+                    <h3>أكاديمية القيادة الإنسانية</h3>
+                    <p>منصة Kaya | 2026</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💎 القيم الأساسية والصفات</h2>
+            <div class="values">
+                <span class="value-tag">النزاهة</span>
+                <span class="value-tag">الاحترافية</span>
+                <span class="value-tag">المساواة بين الجنسين</span>
+                <span class="value-tag">التنوع</span>
+                <span class="value-tag">المبادئ الإنسانية</span>
+            </div>
+            <br>
+            <div class="values">
+                <span class="value-tag">منظم للغاية</span>
+                <span class="value-tag">يهتم بالتفاصيل</span>
+                <span class="value-tag">تواصل ممتاز</span>
+                <span class="value-tag">يعمل تحت الضغط</span>
+                <span class="value-tag">قيادة قوية</span>
+                <span class="value-tag">تعاوني</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 جمال أسعد. جميع الحقوق محفوظة.</p>
+            <p style="margin-top: 10px;">مدير أول لسلسلة الإمداد واللوجستيات</p>
+        </div>
+    </div>
+</body>
+</html>
+```
