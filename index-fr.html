@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamal Asaad | Directeur Senior Supply Chain & Logistique</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c9a959;
+            --accent-light: #e6d5a8;
+            --text: #2d3748;
+            --text-light: #718096;
+            --bg: #ffffff;
+            --bg-light: #f7fafc;
+            --border: #e2e8f0;
+            --shadow: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #f0f4f8;
+            color: var(--text);
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--bg);
+            box-shadow: var(--shadow-lg);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid var(--accent);
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .header .title {
+            font-size: 1.3em;
+            color: var(--accent-light);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .header .divider {
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+            margin: 20px auto;
+        }
+        
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #cbd5e0;
+        }
+        
+        .contact-item a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-light);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 25px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .download-btn:hover {
+            background: transparent;
+            color: var(--accent-light);
+            border-color: var(--accent-light);
+        }
+        
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        .summary-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 25px;
+            border-radius: 3px;
+            font-size: 1.05em;
+            color: #4a5568;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--primary);
+            padding: 20px;
+            text-align: center;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            border-top-color: var(--accent);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        .achievement-card {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .achievement-card:hover {
+            border-left-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        
+        .achievement-icon {
+            font-size: 1.5em;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .achievement-content h3 {
+            color: var(--primary);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .achievement-content p {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        
+        .experience-card {
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .experience-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 25px;
+        }
+        
+        .experience-header h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        
+        .experience-header .company {
+            color: var(--accent-light);
+            font-size: 1em;
+        }
+        
+        .experience-header .meta {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #cbd5e0;
+        }
+        
+        .experience-body {
+            padding: 25px;
+        }
+        
+        .responsibility {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-light);
+        }
+        
+        .responsibility strong {
+            color: var(--primary);
+        }
+        
+        .resilience-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 3px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .resilience-section h3 {
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .resilience-section p {
+            color: #cbd5e0;
+            font-size: 0.95em;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 20px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            font-size: 1em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-light);
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin: 3px;
+            font-size: 0.85em;
+            border: 1px solid var(--border);
+        }
+        
+        .edu-card {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .edu-icon {
+            font-size: 1.5em;
+            color: var(--accent);
+        }
+        
+        .edu-content h3 {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+        
+        .edu-content .institution {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .edu-content .meta {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        
+        .cert-card {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        .cert-card:hover {
+            box-shadow: var(--shadow);
+            border-left-color: var(--accent);
+        }
+        
+        .cert-badge {
+            font-size: 2em;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .cert-content h3 {
+            color: var(--primary);
+            font-size: 1.05em;
+        }
+        
+        .cert-content .issuer {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .cert-content .year {
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        
+        .values-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .value-tag {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            border-bottom: 3px solid var(--accent);
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .value-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-bottom-color: var(--accent);
+        }
+        
+        .footer {
+            background: var(--primary);
+            color: #cbd5e0;
+            text-align: center;
+            padding: 30px;
+            border-top: 5px solid var(--accent);
+        }
+        
+        .footer a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header .meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gamal Asaad</h1>
+            <p class="title">Directeur Senior Supply Chain & Logistique</p>
+            <div class="divider"></div>
+            
+            <div class="contact-bar">
+                <span class="contact-item">
+                    <a href="mailto:zabidi2023@gmail.com">✉ zabidi2023@gmail.com</a>
+                </span>
+                <span class="contact-item">
+                    <a href="tel:+967781118747">✆ +967 781 118 747</a>
+                </span>
+                <span class="contact-item">
+                    <span>📍 Yémen / Djibouti</span>
+                </span>
+                <span class="contact-item">
+                    <a href="https://linkedin.com/in/gamal-assaad-527285163" target="_blank">in LinkedIn</a>
+                </span>
+            </div>
+            
+            <a href="Gamal_Asaad_CV.pdf" download class="download-btn">
+                📥 Télécharger CV (PDF)
+            </a>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📊 Indicateurs Clés</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Réduction des Délais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.5%</div>
+                    <div class="stat-label">Précision des Stocks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">21+</div>
+                    <div class="stat-label">Établissements Soutenus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2M+</div>
+                    <div class="stat-label">Valeur des Stocks</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📋 Résumé Professionnel</h2>
+            <div class="summary-box">
+                <p>Directeur Senior Supply Chain & Logistique avec plus de 10 ans d'expérience dans la gestion de chaînes d'approvisionnement complètes dans des contextes humanitaires complexes. Direction des achats, de l'entreposage et de la distribution de produits pharmaceutiques, vaccins, équipements médicaux et articles de secours d'urgence dans plus de 21 établissements répartis dans 5 gouvernorats yéménites.</p>
+                <br>
+                <p>Mobilisé entre le Yémen et Djibouti pour optimiser les opérations, recruter et former le personnel. Supervision à distance de 5 sous-délégations et liaison principale avec le Ministère de la Santé et les Autorités Douanières.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🏆 Réalisations Clés</h2>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Optimisation de la Chaîne d'Approvisionnement</h3>
+                    <p>Réduction du délai de livraison de 30% grâce au suivi des pipelines.</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Implémentation ERP</h3>
+                    <p>Implémentation de JD Edwards Oracle, réduisant les écarts d'inventaire de 25%.</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Précision des Stocks</h3>
+                    <p>Atteinte d'une précision d'inventaire de 99,5% pour plus de 2 millions de dollars.</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Systèmes de Gestion de la Qualité</h3>
+                    <p>Établissement d'un SMQ complet incluant SOP et CAPA.</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Gestion des Fournisseurs</h3>
+                    <p>Qualification de plus de 50 fournisseurs.</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-icon">◆</span>
+                <div class="achievement-content">
+                    <h3>Gestion des Risques</h3>
+                    <p>Réduction de 15% des pertes liées aux expirations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">💼 Expérience Professionnelle</h2>
+            
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>Directeur Supply Chain & Logistique</h3>
+                    <p class="company">Comité International de la Croix-Rouge (CICR)</p>
+                    <div class="meta">
+                        <span>📍 Yémen / Djibouti</span>
+                        <span>📅 Mai 2013 – Nov 2023</span>
+                    </div>
+                </div>
+                <div class="experience-body">
+                    <div class="responsibility">
+                        <strong>Gestion Complète:</strong> Direction des opérations soutenant plus de 21 établissements.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Mobilisation Transfrontalière:</strong> Déploiements entre le Yémen et Djibouti.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Implémentation ERP:</strong> Direction de l'implémentation de JD Edwards Oracle.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Gestion de la Qualité:</strong> Établissement d'un SMQ complet.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Achats:</strong> Direction des RFQs, ITBs et négociations.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Liaison Gouvernementale:</strong> Liaison avec le Ministère de la Santé.
+                    </div>
+                    <div class="responsibility">
+                        <strong>Réponse d'Urgence:</strong> Gestion logistique des épidémies.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🌍 Résilience de la Chaîne d'Approvisionnement</h2>
+            
+            <div class="resilience-section">
+                <h3>1. Contexte d'Effondrement Systémique</h3>
+                <p>Dans les environnements de conflit actif, les théories standard s'effondrent complètement.</p>
+            </div>
+            
+            <div class="resilience-section">
+                <h3>2. Cadre Logistique à Trois Niveaux</h3>
+                <p><strong style="color: #e6d5a8;">Proximité Stratégique:</strong> Réseau d'entrepôts régionaux.</p>
+                <br>
+                <p><strong style="color: #e6d5a8;">Précision Prédictive:</strong> Principes MRP intégrés aux ERP.</p>
+                <br>
+                <p><strong style="color: #e6d5a8;">Agilité:</strong> Mécanisme d'approvisionnement flexible.</p>
+            </div>
+            
+            <div class="resilience-section">
+                <h3>3. Impact Institutionnel</h3>
+                <p>Une chaîne d'approvisionnement basée sur les données peut assurer la survie.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🛠️ Compétences Clés</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Gestion de la Chaîne</h3>
+                    <span class="skill-tag">Gestion complète</span>
+                    <span class="skill-tag">Stratégie</span>
+                    <span class="skill-tag">Planification</span>
+                    <span class="skill-tag">Prévision</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Achats & Contrats</h3>
+                    <span class="skill-tag">Achats stratégiques</span>
+                    <span class="skill-tag">RFQs, ITBs</span>
+                    <span class="skill-tag">Évaluation</span>
+                    <span class="skill-tag">Négociation</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Gestion de la Qualité</h3>
+                    <span class="skill-tag">SMQ</span>
+                    <span class="skill-tag">SOP</span>
+                    <span class="skill-tag">Validation</span>
+                    <span class="skill-tag">CAPA</span>
+                    <span class="skill-tag">BPF/BPD</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Entrepôts & Stocks</h3>
+                    <span class="skill-tag">Opérations</span>
+                    <span class="skill-tag">Gestion des stocks</span>
+                    <span class="skill-tag">Comptage cyclique</span>
+                    <span class="skill-tag">WMS</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Logistique & Distribution</h3>
+                    <span class="skill-tag">Planification</span>
+                    <span class="skill-tag">Gestion de flotte</span>
+                    <span class="skill-tag">Chaîne du froid</span>
+                    <span class="skill-tag">Livraison finale</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Systèmes ERP</h3>
+                    <span class="skill-tag">JD Edwards Oracle</span>
+                    <span class="skill-tag">SAP S/4HANA</span>
+                    <span class="skill-tag">SAP Ariba</span>
+                    <span class="skill-tag">Analyse de données</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Leadership & RH</h3>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Recrutement</span>
+                    <span class="skill-tag">Évaluation</span>
+                    <span class="skill-tag">Formation</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Langues</h3>
+                    <span class="skill-tag">Arabe (natif)</span>
+                    <span class="skill-tag">Anglais (courant)</span>
+                    <span class="skill-tag">Français (notions)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🎓 Formation & Certifications</h2>
+            
+            <div class="edu-card">
+                <span class="edu-icon">🎓</span>
+                <div class="edu-content">
+                    <h3>Licence en Pharmacie (B.Pharm)</h3>
+                    <p class="institution">Université de Sana'a – Faculté de Pharmacie</p>
+                    <p class="meta">📍 Yémen | 📅 2005 – 2010</p>
+                </div>
+            </div>
+            
+            <div class="edu-card">
+                <span class="edu-icon">📜</span>
+                <div class="edu-content">
+                    <h3>Diplôme ITC en Gestion de la Chaîne d'Approvisionnement</h3>
+                    <p class="institution">Centre du Commerce International (ITC)</p>
+                    <p class="meta">📍 Suisse | 📅 Candidat inscrit</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <span class="cert-badge">🏅</span>
+                <div class="cert-content">
+                    <h3>Certifications SAP (4)</h3>
+                    <p class="issuer">SAP</p>
+                    <p class="year">2024 | S/4HANA Cloud, Ariba</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <span class="cert-badge">🎖️</span>
+                <div class="cert-content">
+                    <h3>Certifications CICR</h3>
+                    <p class="issuer">CICR – Genève</p>
+                    <p class="year">2013-2019 | Logistique & Supply Chain</p>
+                </div>
+            </div>
+            
+            <div class="cert-card">
+                <span class="cert-badge">⭐</span>
+                <div class="cert-content">
+                    <h3>Humanitarian Leadership Academy</h3>
+                    <p class="issuer">Plateforme Kaya</p>
+                    <p class="year">2026 | Analyse de marché, CVA</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">💎 Valeurs Fondamentales</h2>
+            <div class="values-grid">
+                <span class="value-tag">Intégrité</span>
+                <span class="value-tag">Professionnalisme</span>
+                <span class="value-tag">Égalité des genres</span>
+                <span class="value-tag">Diversité</span>
+                <span class="value-tag">Principes humanitaires</span>
+                <span class="value-tag">Très organisé</span>
+                <span class="value-tag">Soucieux du détail</span>
+                <span class="value-tag">Leadership fort</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Gamal Asaad. Tous droits réservés.</p>
+            <p style="margin-top: 10px;">Directeur Senior Supply Chain & Logistique</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">
+                <a href="mailto:zabidi2023@gmail.com">zabidi2023@gmail.com</a> | 
+                <a href="tel:+967781118747">+967 781 118 747</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
