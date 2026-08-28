@@ -41,7 +41,6 @@
             overflow: hidden;
         }
         
-        /* ===== LANGUAGE BAR ===== */
         .language-bar {
             background: #1a365d;
             padding: 10px 20px;
@@ -72,7 +71,6 @@
             font-weight: bold;
         }
         
-        /* ===== HEADER ===== */
         .header {
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
             color: white;
@@ -138,17 +136,23 @@
             color: var(--accent-light);
         }
         
-        /* ===== DOWNLOAD BUTTON ===== */
+        .download-section {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
         .download-btn {
             display: inline-block;
-            margin-top: 25px;
             background: var(--accent);
             color: var(--primary);
-            padding: 15px 35px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 0.9em;
             transition: all 0.3s;
             border: 2px solid var(--accent);
             cursor: pointer;
@@ -160,6 +164,17 @@
             border-color: var(--accent-light);
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(201,169,89,0.3);
+        }
+        
+        .download-btn.outline {
+            background: transparent;
+            color: var(--accent-light);
+            border-color: var(--accent-light);
+        }
+        
+        .download-btn.outline:hover {
+            background: var(--accent);
+            color: var(--primary);
         }
         
         .section {
@@ -498,14 +513,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- ===== LANGUAGE BAR ===== -->
         <div class="language-bar">
             <a href="index.html" class="active">🇾🇪 العربية</a>
             <a href="index-en.html">🇬🇧 English</a>
             <a href="index-fr.html">🇫🇷 Français</a>
         </div>
         
-        <!-- ===== HEADER ===== -->
         <div class="header">
             <h1>جمال أسعد</h1>
             <p class="title">مدير أول لسلسلة الإمداد واللوجستيات</p>
@@ -526,12 +539,19 @@
                 </span>
             </div>
             
-            <a href="Gamal_Asaad_CV.pdf" download class="download-btn">
-                📥 تحميل السيرة الذاتية PDF
-            </a>
+            <div class="download-section">
+                <a href="Gamal_Asaad_CV_AR.pdf" download class="download-btn">
+                    📥 السيرة الذاتية بالعربية
+                </a>
+                <a href="Gamal_Asaad_CV_EN.pdf" download class="download-btn outline">
+                    📥 CV English
+                </a>
+                <a href="Gamal_Asaad_CV_FR.pdf" download class="download-btn outline">
+                    📥 CV Français
+                </a>
+            </div>
         </div>
         
-        <!-- ===== STATS ===== -->
         <div class="section">
             <h2 class="section-title">📊 المؤشرات الرئيسية</h2>
             <div class="stats-grid">
@@ -554,7 +574,6 @@
             </div>
         </div>
         
-        <!-- ===== SUMMARY ===== -->
         <div class="section">
             <h2 class="section-title">📋 الملخص المهني</h2>
             <div class="summary-box">
@@ -564,7 +583,6 @@
             </div>
         </div>
         
-        <!-- ===== ACHIEVEMENTS ===== -->
         <div class="section">
             <h2 class="section-title">🏆 الإنجازات الرئيسية</h2>
             
@@ -617,7 +635,6 @@
             </div>
         </div>
         
-        <!-- ===== EXPERIENCE ===== -->
         <div class="section">
             <h2 class="section-title">💼 الخبرة المهنية</h2>
             
@@ -659,7 +676,6 @@
             </div>
         </div>
         
-        <!-- ===== RESILIENCE ===== -->
         <div class="section">
             <h2 class="section-title">🌍 مرونة سلسلة الإمداد</h2>
             
@@ -683,7 +699,6 @@
             </div>
         </div>
         
-        <!-- ===== SKILLS ===== -->
         <div class="section">
             <h2 class="section-title">🛠️ الكفاءات الأساسية</h2>
             <div class="skills-grid">
@@ -754,7 +769,6 @@
             </div>
         </div>
         
-        <!-- ===== EDUCATION ===== -->
         <div class="section">
             <h2 class="section-title">🎓 التعليم والشهادات</h2>
             
@@ -806,7 +820,6 @@
             </div>
         </div>
         
-        <!-- ===== VALUES ===== -->
         <div class="section">
             <h2 class="section-title">💎 القيم الأساسية</h2>
             <div class="values-grid">
@@ -823,7 +836,6 @@
             </div>
         </div>
         
-        <!-- ===== FOOTER ===== -->
         <div class="footer">
             <p>© 2025 جمال أسعد. جميع الحقوق محفوظة.</p>
             <p style="margin-top: 10px;">مدير أول لسلسلة الإمداد واللوجستيات</p>
