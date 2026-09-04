@@ -1,0 +1,26 @@
+name: اختبار Gemini API
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # يسمح بتشغيله يدوياً
+
+jobs:
+  test-gemini:
+    runs-on: ubuntu-latest
+    steps:
+      - name: استقبال الكود
+        uses: actions/checkout@v4
+
+      - name: استدعاء Gemini API
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          RESPONSE=$(curl -s -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GEMINI_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"contents":[{"parts":[{"text":"قل لي مرحباً بالعربية، أنا Gamal"}]}]}')
+          echo "رد النموذج: $RESPONSE"
+          echo "$RESPONSE" > gemini-output.json
+      
+      - name: عرض الناتج
+        run: cat gemini-output.json
